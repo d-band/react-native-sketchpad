@@ -2,6 +2,9 @@
 
 react native sketchpad
 
+<img src="screenshots/screenshot-1.png" width="280"/>
+<img src="screenshots/screenshot-2.png" width="280"/>
+
 ## Installation
 
 ```sh
@@ -10,12 +13,30 @@ npm install react-native-sketchpad
 
 ## Usage
 
+[example](example/src/App.tsx)
+
 ```js
-import Sketchpad from "react-native-sketchpad";
+import Sketchpad, { SoftBrush, HardBrush } from "react-native-sketchpad";
 
 // ...
-
-const result = await Sketchpad.multiply(3, 7);
+function App() {
+  const pad = useRef();
+  const brush = new SoftBrush(3, 7);
+  const onClear = () => {
+    pad.current?.clear();
+  };
+  const onUndo = () => {
+    pad.current?.undo();
+  };
+  const onSave = () => {
+    pad.current?.toDataURL((base64) => {
+      // do save image
+    });
+  };
+  return (
+    <Sketchpad ref={pad} style={styles.pad} brush={brush} />
+  );
+}
 ```
 
 ## Contributing
