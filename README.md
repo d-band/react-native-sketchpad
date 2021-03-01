@@ -2,8 +2,7 @@
 
 react native sketchpad
 
-<img src="screenshots/screenshot-1.png" width="280"/>
-<img src="screenshots/screenshot-2.png" width="280"/>
+<img src="screenshots/screenshot-1.png" height="520"/>&nbsp;&nbsp;<img src="screenshots/screenshot-2.png" height="520"/>
 
 ## Installation
 
